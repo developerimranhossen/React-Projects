@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <script>
+      const obj = {
+        name: "imran",
+        _id: 1234,
+      };
+      const replaceMongoIdInObject = (obj) => {
+        const {_id, ...updatedObj } = { ...obj, id: obj._id.toString(), address: 'dhaka' };
+        // const updatedObj = { ...obj, id: obj._id.toString() };
+        return updatedObj;
+      };
+      const result = replaceMongoIdInObject(obj);
+    
+      console.log(result);
+
+      //output: {name: 'imran', id: '1234', address: 'dhaka'}
+
+      // const replaceMongoIdInObject = (obj) => {
+      //   const { _id, ...updatedObj } = { ...obj, id: obj._id.toString() };
+      //   return updatedObj;
+      // };
+    </script>
+  </body>
+</html>
